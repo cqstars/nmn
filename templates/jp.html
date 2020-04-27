@@ -1,0 +1,329 @@
+{% extends "jpBase.html" %}
+{% load static %}
+{% block title %}{% endblock %}
+{% block css %}
+    <style>
+        /*遮罩层样式*/
+
+        .black_overlay {
+            display: none;
+            position: absolute;
+            top: 0%;
+            left: 0%;
+            width: 100%;
+            height: 100%;
+            background-color: black;
+            z-index: 1001;
+            -moz-opacity: 0.6;
+            opacity: .60;
+            filter: alpha(opacity=60);
+        }
+
+
+    </style>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/jp.css' %}">
+{% endblock %}
+{% block breadcrumb %}
+{% endblock %}
+{% block content %}
+
+    <div id="light" class="box">
+        <div class="box_title">
+            <ul>
+                <li style="float: right"><a href="javascript:void(0)" onclick="two()">×</a></li>
+            </ul>
+        </div>
+
+        <!--
+                <a onclick="size()">设置成说手机窗口</a>
+        -->
+        <div class="box_content">
+            <ul style="border-bottom: 1px dotted #363636">
+                <li style="border-bottom: 1px solid #ff0000"><strong>
+                    <svg class="icon t" aria-hidden="true">
+                        <use xlink:href="#icontiaohao"></use>
+                    </svg>
+                    歌曲设置:</strong></li>
+            </ul>
+            <ul>
+                <li>
+                    歌名:&nbsp;<input type="text" name="songname" value=""></li>
+                <li>
+                    作曲: <input type="text" name="composing" value=""></li>
+                <li>
+                </li>
+                作词：<input type="text" name="lyrics" value="">
+                <li>
+                    演唱：<input type="text" name="singer" value="">
+                </li>
+            </ul>
+            <ul>
+
+
+                <li>调号：<input type="text" name="tonemark" value=""></li>
+
+                <li>附加调号：<input type="text" name="addtonemark" value=""></li>
+
+
+                <li>速度表情：<input type="text" name="singspeed" value=""></li>
+
+            </ul>
+            <ul>
+                <li>拍号：<input type="text" name="timesignature" value=""></li>
+
+                <li>附加拍号1：<input type="text" name="addtimesignature1" value=""></li>
+
+                <li>附加拍号2：<input type="text" name="addtimesignature2" value=""></li>
+
+            </ul>
+
+
+            <ul style="border-bottom: 1px dotted #363636">
+                <li style="border-bottom: 1px solid #ff0000"><strong>
+                    <svg class="icon t" aria-hidden="true">
+                        <use xlink:href="#iconshezhi"></use>
+                    </svg>
+                    页面设置:</strong></li>
+
+            </ul>
+            <ul style="border-bottom: 1px dotted #363636">
+                <li>画布宽：<input type="text" name="input_svg_edit_width" value="1080"></li>
+                <li>画布高：<input type="text" name="input_svg_edit_height" value="800"></li>
+                <li>字体大小：<input type="text" name="input_svg_editor_fontsize" value="30"></li>
+            </ul>
+            <ul>
+                <li>
+                    <div class="btn" onclick="page_setup()">确定</div>
+                </li>
+                <li>
+                    <div class="btn" onclick="two()">取消</div>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+
+    <div id="fade" class="black_overlay">
+
+    </div>
+    <h2 style="text-align: center">简谱编辑</h2>
+    <div class="wrapper">
+        <div class="btn" href="javascript:void(0)" onclick="one()">
+            页面设置
+        </div>
+        <div class="btn" id="insert" onclick="displaygrid()">
+            显示网格
+
+        </div>
+        {#        <div class="animation" id="cursor"></div>#}
+
+    </div>
+    <div class="wrapper">
+        <h3>忘情水</h3>
+    </div>
+    <div class="wrapper">
+
+        <div id="songname" style="width: 100%;padding: 10px 300px;">
+
+            <ul>
+                <il>1=c 4/4</il>
+                <li>作曲：彭韬文</li>
+            </ul>
+
+            <ul>
+                <il>轻快的、慢慢、河伯加快</il>
+                <li>作词：彭韬文</li>
+            </ul>
+        </div>
+    </div>
+    <div class="wrapper" style="border: red 1px solid">
+
+        <div id="jp" tabindex='-1' style="width: 1080px;height:800px;">
+            <svg id="jpsvg" version="1.1" width="1080" height="800" viewBox="0 0 1080 800"
+                 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+
+                <defs>
+                    <g id="mycursorstatic">
+                        <path d="M5,5 V30" fill="none" stroke="#000000" STROKE-WIDTH="1">
+                            <animate attributeName="opacity" from="1" to="0.2" begin="0.2s" dur="0.8s"
+                                     repeatCount="indefinite"/>
+                        </path>
+                    </g>
+                    <g id="L8">
+                        <text x="0" y="0" stroke="black" font-size="50">8</text>
+                        <circle cx="15" cy="65" r="4" fill="black"/>
+                    </g>
+                    <!--
+                                        <g id="L1">
+                                            <text x="0" y="50" stroke="black" font-size="50">1</text>
+                                            <circle cx="15" cy="65" r="4" fill="black"/>
+                                        </g>
+                                        <g id="L2">
+                                            <text x="0" y="50" stroke="black" font-size="50">2</text>
+                                            <circle cx="15" cy="65" r="4" fill="black"/>
+                                        </g> <g id="L3">
+                                            <text x="0" y="50" stroke="black" font-size="50">3</text>
+                                            <circle cx="15" cy="65" r="4" fill="black"/>
+                                        </g> <g id="L4">
+                                            <text x="0" y="50" stroke="black" font-size="50">4</text>
+                                            <circle cx="15" cy="65" r="4" fill="black"/>
+                                        </g> <g id="L5">
+                                            <text x="0" y="50" stroke="black" font-size="50">5</text>
+                                            <circle cx="15" cy="65" r="4" fill="black"/>
+                                        </g> <g id="L6">
+                                            <text x="0" y="50" stroke="black" font-size="50">6</text>
+                                            <circle cx="15" cy="65" r="4" fill="black"/>
+                                        </g>
+                                        <g id="L7">
+                                            <text x="0" y="50" stroke="black" font-size="50">7</text>
+                                            <circle cx="15" cy="65" r="4" fill="black"/>
+                                        </g>
+                                        <linearGradient id="a1">
+                                            <stop offset="5%" stop-color="#F00"/>
+                                            <stop offset="95%" stop-color="#ff0"/>
+                                        </linearGradient>
+                                        <path id="a1" d="M0 50 C150 150 100 -50 300 50" stroke="#000" fill="none"/>
+                                        <mask id="mask1">
+                                            <rect x="50" y="50" width="100" height="100" fill="#ccc"/>
+                                            <rect x="150" y="150" width="50" height="50" fill="#fff"/>
+                                        </mask>
+                                        <filter width="200" height="200" x="0" y="0" id="blur" filterUnits="userSpaceOnUse">
+                                            <feGaussianBlur stdDeviation="5"/>
+                                        </filter>-->
+
+                </defs>
+
+                <!--<use xlink:href="#mycursor" x="40" y="100"></use>
+                <text x="400" y="35" fill="black" font-size="35" text-anchor="middle" dominant-baseline="middle">忘情水
+                </text>
+                <text x="10" y="75" fill="black" font-size="20" text-anchor="left" dominant-baseline="middle">1=F4/4
+                </text>
+                <text x="600" y="75" fill="black" font-size="20" text-anchor="left" dominant-baseline="middle">词：陈安秀
+                </text>
+                <text x="600" y="105" fill="black" font-size="20" text-anchor="left" dominant-baseline="middle">
+                    曲：彭涛
+                </text>
+                <use xlink:href="#L1" x="10" y="20" transform="translate(20,0),scale(0.5)"></use>
+                <use xlink:href="#L8" x="30" y="20"></use>
+                <use xlink:href="#L5" x="150" y="50" tagname="1,3"></use>-->
+
+            </svg>
+
+        </div>
+    </div>
+{% endblock %}
+{% block js %}
+
+    <script type="text/javascript" src="{% static 'js/Creat.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/nmnlist.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/keycode.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/jpeditorArr.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/musicnotation.js' %}"></script>
+    <script type="text/javascript">
+        //浏览器宽高
+        var w = document.documentElement.clientWidth || document.body.clientWidth;
+        var h = document.documentElement.clientHeight || document.body.clientHeight;
+        var jpeditor = document.querySelector("#jp");
+        var jpsvg = document.getElementById("jpsvg");
+
+    </script>
+    <script type="text/javascript" src="{% static 'js/Creat.js' %}"></script>
+    <script type="text/javascript">
+        //开关设置窗口
+        function one() {
+            document.getElementById('light').style.display = 'block';
+            document.getElementById('fade').style.display = 'block'
+        }
+
+        function two() {
+            document.getElementById('light').style.display = 'none';
+            document.getElementById('fade').style.display = 'none'
+        }
+
+    </script>
+    <script type="text/javascript">
+        jpeditorAttr.init();
+        window.onload = function () {
+
+            console.log('所有的网格二维数组：');
+            console.log(jpeditorAttr.grids);
+            console.log(jpeditorAttr.nmnlist);
+        }
+
+        //页面设置弹窗确定按钮事件
+        function page_setup() {
+            jpeditorAttr.width = document.getElementsByName("input_svg_edit_width")[0].value;
+            jpeditorAttr.height = document.getElementsByName("input_svg_edit_height")[0].value;
+            jpeditorAttr.fontsize = document.getElementsByName("input_svg_editor_fontsize")[0].value;
+            jpeditorAttr.songname = document.getElementsByName("songname")[0].value;
+            jpeditorAttr.composing = document.getElementsByName("composing")[0].value;
+            jpeditorAttr.lyrics = document.getElementsByName("lyrics")[0].value;
+            jpeditorAttr.singer = document.getElementsByName("singer")[0].value;
+            jpeditorAttr.tonemark = document.getElementsByName("tonemark")[0].value;
+            jpeditorAttr.addtonemark = document.getElementsByName("addtonemark")[0].value;
+            jpeditorAttr.singspeed = document.getElementsByName("singspeed")[0].value;
+            jpeditorAttr.timesignatur = document.getElementsByName("timesignature")[0].value;
+            jpeditorAttr.addtimesignature1 = document.getElementsByName("addtimesignature1")[0].value;
+            jpeditorAttr.addtimesignature2 = document.getElementsByName("addtimesignature2")[0].value;
+            jpeditorAttr.init();
+
+        }
+
+        //按照grids显示网格按钮
+        function displaygrid() {
+            if (jpeditorAttr.isdisplaygrid) {
+                var selectDom = jpsvg.querySelectorAll("text[tagname='cell']");
+                console.log(selectDom);
+                var newArr = [];
+                for (var i = 0; i < selectDom.length; i++) {
+                    newArr.push(selectDom[i]);
+                }
+                for (var i = 0; i < newArr.length; i++) {
+                    jpsvg.removeChild(newArr[i]);
+                }
+                jpeditorAttr.isdisplaygrid = false;
+            }
+
+            else {
+                for (var i = 0; i < jpeditorAttr.grids.length; i++) {
+
+                    for (var j = 0; j < jpeditorAttr.grids[i].length; j++) {
+
+                        var mark = createTag("text", {
+                            "x": jpeditorAttr.grids[i][j].x,
+                            "y": jpeditorAttr.grids[i][j].y,
+                            "font-size": 8,
+                            "fill": "blue",
+                            "stroke": "none",
+                            "stroke-opacity": "0",
+                            "stroke-width": "5.6",
+                            "baseline-shift": "baseline",
+                            "tagname": "cell"
+                        });
+                        mark.innerHTML = "" + i + "," + j;
+                        jpsvg.appendChild(mark);
+                        if (i + 1 < jpeditorAttr.grids.length && j + 1 < jpeditorAttr.grids[i].length) {
+                            console.log(jpeditorAttr.grids[i][j + 1].x);
+                            let myg = createTag("path", {
+                                "d": "M" + jpeditorAttr.grids[i][j].x + "," + jpeditorAttr.grids[i][j].y + " L" + jpeditorAttr.grids[i][j + 1].x + "," + jpeditorAttr.grids[i][j + 1].y,
+                                "stroke": "black","stoke-width":0.1
+                            });
+                            let mygy = createTag("path", {
+                                "d": "M" + jpeditorAttr.grids[i][j].x + "," + jpeditorAttr.grids[i][j].y + " L" + jpeditorAttr.grids[i + 1][j].x + "," + jpeditorAttr.grids[i + 1][j].y,
+                                "stroke": "black","stoke-width":0.1
+                            });
+                            jpsvg.appendChild(myg);
+                            jpsvg.appendChild(mygy);
+                        }
+
+
+                    }
+                    jpeditorAttr.isdisplaygrid = true;
+                }
+            }
+        }
+    </script>
+    <script type="text/javascript" src="{% static 'js/jpeditorEvent.js' %}"></script>
+
+
+{% endblock %}

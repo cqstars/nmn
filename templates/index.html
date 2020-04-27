@@ -1,0 +1,228 @@
+{% load static %}
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" media="screen"/>
+    <script type="text/javascript" src="{% static 'js/keycode.js' %}"></script>
+</head>
+<body>
+<h1>My Simple Web Editor</h1>
+<div id="editor" tabindex='-1'>
+    <div id="lines">
+        <span>1</span><br/>
+        <span>2</span><br/>
+        <span>3</span><br/>
+    </div>
+    <div id="content"></div>
+</div>
+<span class="blinking-cursor">|</span>
+
+</body>
+<script type="text/javascript">
+
+    /// <reference path="defs/jquery.d.ts" />
+
+    let Editor = function (caretIndex, text) {
+        this.caretIndex = caretIndex;
+        this.text = text;
+    }
+    Editor.prototype.textBeforeCaret = function () {
+        if (this.caretIndex == 0) {
+            return "";
+        } else {
+            return this.text.substring(0, this.caretIndex);
+        }
+    }
+
+    Editor.prototype.textAfterCaret = function () {
+        if (this.caretIndex == this.text.length) {
+            return "";
+        } else {
+            return this.text.substring(this.caretIndex);
+        }
+    }
+    Editor.prototype.generateHtml = function () {
+        return this.textBeforeCaret()
+            + "<span class='cursor-placeholder'>|</span>"
+            + this.textAfterCaret();
+    }
+
+    Editor.prototype.type = function (c) {
+        this.text = this.textBeforeCaret() + c + this.textAfterCaret();
+        this.caretIndex = this.caretIndex + 1;
+    }
+    Editor.prototype.deleteChar = function () {
+        if (this.textBeforeCaret().length > 0) {
+            this.text = this.textBeforeCaret().substring(0, this.textBeforeCaret().length - 1) + this.textAfterCaret();
+            this.caretIndex--;
+            return true;
+        } else {
+            return false;
+        }
+    }
+    Editor.prototype.moveLeft = function () {
+        if (this.caretIndex == 0) {
+            return false;
+        } else {
+            this.caretIndex--;
+            return true;
+        }
+    }
+    Editor.prototype.moveRight = function () {
+        if (this.caretIndex == this.text.length) {
+            return false;
+        } else {
+            this.caretIndex++;
+            return true;
+        }
+    }
+
+    let updateHtml = function (editor) {
+        console.log(document.getElementsByClassName("cursor-placeholder"));
+        document.getElementById("editor").innerHTML = editor.generateHtml();
+        var cursorPos = document.getElementsByClassName("cursor-placeholder")[0];
+        console.log(cursorPos.offsetTop, cursorPos.offsetLeft);
+        var delta = cursorPos.offsetWidth / 4;
+        //document.getElementsByClassName("blinking-cursor")[0].setAttribute('style', 'top:' + cursorPos.offsetTop + ';left:' + (cursorPos.offsetLeft - delta));
+        document.getElementsByClassName("blinking-cursor")[0].setAttribute('style', 'top:' + cursorPos.offsetTop + ';left:' + (cursorPos.offsetLeft + 105));
+    };
+
+    (function () {
+        let editor = new Editor(0, "");
+        updateHtml(editor);
+    }())
+
+    /*(function () {
+        let editor = new Editor();
+        updateHtml();
+        $(document).keypress(function (e) {
+            var c = String.fromCharCode(e.which);
+            (window as any).editor.type(c);
+            updateHtml();
+        });
+        $(document).keydown(function (e) {
+            if (e.which == 8 && (window as any).editor.deleteChar()) {
+                updateHtml();
+            }
+            ;
+            if (e.which == 37 && (window as any).editor.moveLeft()) {
+                updateHtml();
+            }
+            ;
+            if (e.which == 39 && (window as any).editor.moveRight()) {
+                updateHtml();
+            }
+            ;
+        });
+    }());
+*/
+
+</script>
+<script type="text/javascript">
+let jpeditor=document.getElementById("editor");
+
+//组合键监控键盘事件
+let keyCodeArry = [];
+jpeditor.onkeydown = function (ev) {
+    var oEvent = ev || event;
+    keyCode = oEvent.keyCode;
+    keyCodeArry = addKeyCodeArry(keyCode, keyCodeArry);
+
+}
+jpeditor.onkeyup = function (ev) {
+    var oEvent = ev || event;
+    keyCode = oEvent.keyCode;
+    keyeventhandle();
+    keyCodeArry = deletKeyCodeArry(keyCode, keyCodeArry);
+
+}
+
+function addKeyCodeArry(num, arr) {
+    var check = 0;
+    for (var i = 0; i < arr.length; i++) {
+        if (arr[i] == num) {
+            check = 1;
+        }
+    }
+    if (check == 0) {
+        arr.push(num);
+    }
+    return arr;
+}
+
+function deletKeyCodeArry(num, arr) {
+    for (var i = 0; i < arr.length; i++) {
+        if (arr[i] == num) {
+            arr.splice(i, 1);
+        }
+    }
+    return arr;
+}
+
+function keyeventhandle() {
+    console.log("press a key");
+    switch (keyCodeArry[0]) {  // 获取当前按下键盘键的编码
+        case 37 :  // 按下左箭头键，向左移动
+
+            break;
+        case 39 :  // 按下右箭头键，向右移动一个
+
+            break;
+        case 38 :  // 按下上箭头键，向上移动5个像素
+
+            break;
+        case 40 :  // 按下下箭头键，向下移动5个像素
+
+            break;
+        case 72://按下了H键，后判断数字键
+            if (keyCodeArry[1]) {
+
+            }
+            break;
+
+        case 76://按下了l键,然后数字键
+
+            break;
+
+        case 48:
+        case 49:
+        case 50:
+        case 51:
+        case 52:
+        case 53:
+        case 54:
+        case 55:
+        case 56:
+        case 57:
+        case 96:
+        case 97:
+        case 98:
+        case 99:
+        case 100:
+        case 101:
+        case 102:
+        case 103:
+        case 104:
+        case 105://直接数字键
+
+            break;
+        case 16://左边Shift键
+
+            break;
+        case 13://回车键
+
+            break;
+
+        default:
+
+            //console.log(keyencode[e.keyCode]);
+            //console.log(row, col);
+
+
+            // jpsvg.appendChild(txt);
+            break;
+    }
+
+
+}
+</script>
+</html>
