@@ -3,16 +3,156 @@
 <head>
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" media="screen"/>
     <script type="text/javascript" src="{% static 'js/keycode.js' %}"></script>
+    <style>
+        .icon {
+            width: 15px;
+            height: 20px;
+            font-size: 100px;
+            font-family: Verdana;
+        }
+
+        svg {
+            overflow: hidden;
+
+        }
+    </style>
 </head>
 <body>
-<h1>My Simple Web Editor</h1>
+<svg>
+    <symbol id="M1">
+        <path d="M394.41,579.3H205.59V543.7h72.62v-233.8h-72.62v-31.86c9.84,0,20.38-0.82,31.63-2.46c11.24-1.64,19.76-4.02,25.54-7.15
+		c7.18-3.9,12.84-8.86,16.98-14.88c4.14-6.01,6.52-14.09,7.15-24.25h36.31V543.7h71.22V579.3z"/>
+    </symbol>
+    <symbol id="M2">
+        <path fill="#000" d="M451.76,468.09H156.45v-61.23c20.51-17.58,41.06-35.16,61.67-52.73c20.6-17.58,39.79-35.06,57.57-52.44
+		c37.5-36.33,63.18-65.19,77.05-86.57c13.87-21.39,20.8-44.48,20.8-69.29c0-22.65-7.47-40.38-22.41-53.17
+		c-14.94-12.79-35.79-19.19-62.55-19.19c-17.78,0-37.01,3.13-57.71,9.38c-20.7,6.25-40.92,15.82-60.64,28.71h-2.93V50.02
+		c13.87-6.83,32.37-13.08,55.52-18.75c23.14-5.66,45.56-8.5,67.24-8.5c44.72,0,79.78,10.79,105.18,32.37
+		c25.39,21.58,38.09,50.83,38.09,87.74c0,16.6-2.1,32.08-6.3,46.44c-4.2,14.36-10.4,27.98-18.6,40.87
+		c-7.62,12.11-16.55,24.02-26.81,35.74s-22.71,24.71-37.35,38.96c-20.9,20.51-42.48,40.38-64.75,59.62
+		c-22.27,19.24-43.07,37.06-62.4,53.47h234.67V468.09z"/>
+    </symbol>
+    <symbol id="M3">
+        <path fill="#000" d="M413.38,258.03c9.38,8.4,17.09,18.95,23.14,31.64c6.05,12.7,9.08,29.1,9.08,49.22c0,19.92-3.62,38.19-10.84,54.79
+		c-7.23,16.6-17.39,31.05-30.47,43.36c-14.65,13.67-31.89,23.78-51.71,30.32c-19.83,6.54-41.56,9.81-65.19,9.81
+		c-24.22,0-48.05-2.88-71.48-8.64s-42.68-12.06-57.71-18.9V388.4h4.39c16.6,10.94,36.13,20.02,58.59,27.25
+		c22.46,7.23,44.14,10.84,65.04,10.84c12.3,0,25.39-2.05,39.26-6.15c13.87-4.1,25.09-10.15,33.69-18.16
+		c8.98-8.59,15.67-18.06,20.07-28.42c4.39-10.35,6.59-23.44,6.59-39.26c0-15.62-2.49-28.56-7.47-38.82s-11.87-18.31-20.65-24.17
+		c-8.79-6.05-19.44-10.2-31.93-12.45c-12.5-2.24-25.98-3.37-40.43-3.37h-26.37v-48.63h20.51c29.69,0,53.37-6.2,71.04-18.6
+		c17.67-12.4,26.51-30.51,26.51-54.35c0-10.55-2.25-19.78-6.74-27.69c-4.5-7.91-10.74-14.4-18.75-19.48
+		c-8.4-5.08-17.39-8.59-26.95-10.55c-9.57-1.95-20.41-2.93-32.52-2.93c-18.56,0-38.28,3.32-59.18,9.96
+		c-20.9,6.64-40.63,16.02-59.18,28.13h-2.93V50.32c13.87-6.83,32.37-13.13,55.52-18.9c23.14-5.76,45.56-8.64,67.24-8.64
+		c21.29,0,40.04,1.95,56.25,5.86c16.21,3.91,30.86,10.16,43.95,18.75c14.06,9.38,24.71,20.7,31.93,33.98
+		c7.22,13.28,10.84,28.81,10.84,46.58c0,24.22-8.55,45.36-25.63,63.43c-17.09,18.07-37.26,29.44-60.5,34.13v4.1
+		c9.38,1.57,20.11,4.83,32.23,9.81C394.72,244.41,404.98,250.61,413.38,258.03z"/>
+    </symbol>
+    <symbol id="M4">
+        <path fill="#000" d="M461.72,345.34h-64.75v122.75h-56.25V345.34H131.84v-67.38L343.07,31.86h53.91v266.6h64.75V345.34z M340.72,298.46V101.59
+		L171.68,298.46H340.72z"/>
+    </symbol>
+    <symbol id="M5">
+        <path fill="#000" d="M448.24,329.52c0,20.32-3.71,39.75-11.13,58.3c-7.42,18.56-17.58,34.18-30.47,46.88c-14.06,13.67-30.81,24.17-50.24,31.49
+		c-19.44,7.32-41.95,10.99-67.53,10.99c-23.83,0-46.78-2.49-68.85-7.47c-22.07-4.98-40.72-10.99-55.96-18.02v-61.82h4.1
+		c16.01,10.16,34.76,18.8,56.25,25.93c21.48,7.13,42.58,10.69,63.28,10.69c13.87,0,27.29-1.95,40.28-5.86
+		c12.99-3.9,24.56-10.74,34.72-20.51c8.59-8.4,15.09-18.46,19.48-30.18s6.59-25.29,6.59-40.72c0-15.04-2.59-27.73-7.76-38.09
+		c-5.18-10.35-12.36-18.65-21.53-24.9c-10.16-7.42-22.51-12.64-37.06-15.67c-14.55-3.03-30.81-4.54-48.78-4.54
+		c-17.19,0-33.74,1.17-49.66,3.52c-15.92,2.34-29.64,4.69-41.16,7.03V31.86h262.5v51.27H239.36v116.02
+		c8.4-0.78,16.99-1.36,25.78-1.76c8.79-0.39,16.41-0.59,22.85-0.59c23.63,0,44.33,2,62.11,6.01c17.77,4.01,34.08,11.09,48.93,21.24
+		c15.62,10.74,27.73,24.61,36.33,41.6C443.94,282.64,448.24,303.93,448.24,329.52z"/>
+    </symbol>
+    <symbol id="M6">
+        <path fill="#000" d="M458.2,326.59c0,44.34-14.6,80.52-43.8,108.54c-29.2,28.03-64.99,42.04-107.37,42.04c-21.49,0-41.02-3.32-58.59-9.96
+		s-33.11-16.5-46.58-29.59c-16.8-16.21-29.74-37.69-38.82-64.45c-9.08-26.76-13.62-58.98-13.62-96.68
+		c0-38.67,4.15-72.95,12.45-102.83c8.3-29.88,21.53-56.44,39.7-79.69c17.18-22.07,39.35-39.3,66.5-51.71
+		c27.14-12.4,58.79-18.6,94.92-18.6c11.52,0,21.19,0.49,29,1.46c7.81,0.98,15.72,2.74,23.73,5.27v55.96h-2.93
+		c-5.47-2.93-13.72-5.71-24.76-8.35c-11.04-2.64-22.32-3.96-33.84-3.96c-42,0-75.49,13.14-100.49,39.4
+		c-25,26.27-39.55,61.77-43.65,106.49c16.41-9.96,32.56-17.53,48.49-22.71c15.92-5.17,34.32-7.76,55.22-7.76
+		c18.55,0,34.91,1.71,49.07,5.13c14.16,3.42,28.66,10.3,43.51,20.65c17.18,11.92,30.13,26.95,38.82,45.12
+		C453.85,278.54,458.2,300.61,458.2,326.59z M398.73,328.93c0-18.16-2.69-33.2-8.06-45.12c-5.38-11.91-14.21-22.27-26.51-31.05
+		c-8.99-6.25-18.95-10.35-29.88-12.3c-10.94-1.95-22.37-2.93-34.28-2.93c-16.6,0-32.04,1.95-46.29,5.86
+		c-14.26,3.91-28.91,9.96-43.95,18.16c-0.39,4.3-0.69,8.45-0.88,12.45c-0.2,4-0.29,9.04-0.29,15.09c0,30.86,3.17,55.22,9.52,73.1
+		c6.34,17.87,15.09,31.98,26.22,42.33c8.98,8.6,18.7,14.9,29.15,18.9c10.45,4,21.83,6.01,34.13,6.01c28.32,0,50.58-8.64,66.8-25.93
+		C390.62,386.21,398.73,361.35,398.73,328.93z"/>
+    </symbol>
+    <symbol id="M7">
+        <path fill="#000" d="M452.93,97.19l-197.46,370.9h-62.7L402.83,83.13H154.39V31.86h298.54V97.19z"/>
+    </symbol>
+    <symbol id="L1">
+        <circle cx="300" cy="739" r="30"/>
+        <g>
+            <path d="M394.41,579.3H205.59V543.7h72.62v-233.8h-72.62v-31.86c9.84,0,20.38-0.82,31.63-2.46c11.24-1.64,19.76-4.02,25.54-7.15
+		c7.18-3.9,12.84-8.86,16.98-14.88c4.14-6.01,6.52-14.09,7.15-24.25h36.31V543.7h71.22V579.3z"/>
+        </g>
+    </symbol>
+    <symbol id="H1">
+        <circle cx="300" cy="69" r="30"/>
+        <g>
+            <path d="M394.41,579.3H205.59V543.7h72.62v-233.8h-72.62v-31.86c9.84,0,20.38-0.82,31.63-2.46c11.24-1.64,19.76-4.02,25.54-7.15
+		c7.18-3.9,12.84-8.86,16.98-14.88c4.14-6.01,6.52-14.09,7.15-24.25h36.31V543.7h71.22V579.3z"/>
+        </g>
+    </symbol>
+    <symbol id="H1"></symbol>
+</svg>
+
+
+<h1 style="color: orange">简谱编辑器</h1>
+<div style="margin: 0px auto;background-color: red" class="Link_tone">12121</div>
+<div style="margin: 0px auto;background-color: #a2a6f4" class="tone" id="t">
+
+    <svg class="icon" viewBox="0 0 600 600">
+        <use xlink:href="#M1" x="0" y="0"/>
+    </svg>
+    <svg class="icon" viewBox="0 0 600 600">
+        <use xlink:href="#M2" x="0" y="0"/>
+    </svg>
+    <svg class="icon" viewBox="0 0 600 600">
+        <use xlink:href="#M3" x="0" y="0"/>
+    </svg>
+    <svg class="icon" viewBox="0 0 600 600">
+        <use xlink:href="#M4" x="0" y="0"/>
+    </svg>
+    <svg class="icon" viewBox="0 0 600 600">
+        <use xlink:href="#M5" x="0" y="0"/>
+    </svg>
+    <svg class="icon" viewBox="0 0 600 600">
+        <use xlink:href="#M6" x="0" y="0"/>
+    </svg>
+    <svg class="icon" viewBox="0 0 600 600">
+        <use xlink:href="#M7" x="0" y="0"/>
+    </svg>
+    <svg class="icon" viewBox="0 0 600 800">
+        <use xlink:href="#L1" x="0" y="0"/>
+    </svg>
+    <svg class="icon" viewBox="0 0 600 800">
+        <use xlink:href="#H1" x="0" y="0"/>
+    </svg>
+    <!-- <svg class="icon" viewBox="0 0 1024 1024">
+         <path fill="#000" d="M870,709.74c-19.76,37.89-34.13,75.78-55.69,133.23H183.72v-19.56c98.81-67.23,199.42-135.68,285.65-205.35
+         c93.42-73.34,240.74-168.68,240.74-290.92c0-111.23-84.44-169.9-226.37-169.9c-134.74,0-210.2,73.34-249.72,113.68l-26.95-14.67
+         l97.01-91.68c48.51-34.23,129.35-64.78,224.57-64.78c141.93,0,278.47,68.45,278.47,187.02c0,107.57-84.44,184.57-228.16,289.69
+         L300.49,783.08h370.09c89.83,0,116.78-6.11,163.49-80.67L870,709.74z"/>
+     </svg>
+     <svg width="660" height="220" style="outline: 1px solid red; font-size: 2em; overflow: visible;">
+         <text x="240" y="120">
+             <tspan>SVG</tspan>
+             <tspan>SVG</tspan>
+         </text>
+     </svg>
+     -->
+
+
+</div>
+<div class="Lyric" style="background-color: #9f5733">456</div>
 <div id="editor" tabindex='-1'>
+
     <div id="lines">
         <span>1</span><br/>
         <span>2</span><br/>
         <span>3</span><br/>
     </div>
-    <div id="content"></div>
+    <div id="content">
+
+    </div>
 </div>
 <span class="blinking-cursor">|</span>
 
@@ -21,208 +161,226 @@
 
     /// <reference path="defs/jquery.d.ts" />
 
-    let Editor = function (caretIndex, text) {
-        this.caretIndex = caretIndex;
-        this.text = text;
-    }
-    Editor.prototype.textBeforeCaret = function () {
-        if (this.caretIndex == 0) {
-            return "";
-        } else {
-            return this.text.substring(0, this.caretIndex);
+    var Editor = {
+        "caretIndex": 0,
+        "text": '',
+        "textBeforeCaret": function () {
+            if (this.caretIndex == 0) {
+                return "";
+            } else {
+                return this.text.substring(0, this.caretIndex);
+            }
+        },
+        "textAfterCaret": function () {
+            if (this.caretIndex == this.text.length) {
+                return "";
+            } else {
+                return this.text.substring(this.caretIndex);
+            }
+        },
+        "generateHtml": function () {
+            return this.textBeforeCaret()
+                + "<span class='cursor-placeholder'>|</span>"
+                + this.textAfterCaret();
+        },
+        "type": function (c) {
+            this.text = this.textBeforeCaret() + c + this.textAfterCaret();
+            this.caretIndex = this.caretIndex + 1;
+        },
+        "deleteChar": function () {
+            if (this.textBeforeCaret().length > 0) {
+                this.text = this.textBeforeCaret().substring(0, this.textBeforeCaret().length - 1) + this.textAfterCaret();
+                this.caretIndex--;
+                return true;
+            } else {
+                return false;
+            }
+        },
+        "moveLeft": function () {
+            if (this.caretIndex == 0) {
+                return false;
+            } else {
+                this.caretIndex--;
+                return true;
+            }
+        },
+        "moveRight": function () {
+            if (this.caretIndex == this.text.length) {
+                return false;
+            } else {
+                this.caretIndex++;
+                return true;
+            }
         }
+
     }
 
-    Editor.prototype.textAfterCaret = function () {
-        if (this.caretIndex == this.text.length) {
-            return "";
-        } else {
-            return this.text.substring(this.caretIndex);
-        }
-    }
-    Editor.prototype.generateHtml = function () {
-        return this.textBeforeCaret()
-            + "<span class='cursor-placeholder'>|</span>"
-            + this.textAfterCaret();
-    }
 
-    Editor.prototype.type = function (c) {
-        this.text = this.textBeforeCaret() + c + this.textAfterCaret();
-        this.caretIndex = this.caretIndex + 1;
-    }
-    Editor.prototype.deleteChar = function () {
-        if (this.textBeforeCaret().length > 0) {
-            this.text = this.textBeforeCaret().substring(0, this.textBeforeCaret().length - 1) + this.textAfterCaret();
-            this.caretIndex--;
-            return true;
-        } else {
-            return false;
-        }
-    }
-    Editor.prototype.moveLeft = function () {
-        if (this.caretIndex == 0) {
-            return false;
-        } else {
-            this.caretIndex--;
-            return true;
-        }
-    }
-    Editor.prototype.moveRight = function () {
-        if (this.caretIndex == this.text.length) {
-            return false;
-        } else {
-            this.caretIndex++;
-            return true;
-        }
-    }
-
-    let updateHtml = function (editor) {
+    let updateHtml = function () {
         console.log(document.getElementsByClassName("cursor-placeholder"));
-        document.getElementById("editor").innerHTML = editor.generateHtml();
-        var cursorPos = document.getElementsByClassName("cursor-placeholder")[0];
-        console.log(cursorPos.offsetTop, cursorPos.offsetLeft);
+        document.getElementById("editor").innerHTML = Editor.generateHtml();
+        var jpeditor = document.getElementById("editor").getBoundingClientRect();
+        var cursorPos = document.getElementsByClassName("cursor-placeholder")[0].getBoundingClientRect();
+        console.log("光标位置：", cursorPos.x, cursorPos.y, "右下角：", cursorPos.right, cursorPos.bottom);
+        console.log("编辑器位置：", jpeditor.x, jpeditor.y);
+        console.log("浏览器宽高：", window.screen.width, window.screen.height);
+
         var delta = cursorPos.offsetWidth / 4;
         //document.getElementsByClassName("blinking-cursor")[0].setAttribute('style', 'top:' + cursorPos.offsetTop + ';left:' + (cursorPos.offsetLeft - delta));
-        document.getElementsByClassName("blinking-cursor")[0].setAttribute('style', 'top:' + cursorPos.offsetTop + ';left:' + (cursorPos.offsetLeft + 105));
+        document.getElementsByClassName("blinking-cursor")[0].setAttribute('style', 'top:' + cursorPos.y + ';left:' + (cursorPos.x));
     };
 
     (function () {
-        let editor = new Editor(0, "");
-        updateHtml(editor);
+        //  let editor = new Editor(0, "");
+        let jpeditor = document.getElementById("editor");
+        updateHtml();
+        jpeditor.addEventListener("keydown", function (ev) {
+            console.log("its.begin");
+            var oEvent = ev || event;
+            let keyCode = oEvent.keyCode;
+            keyCodeArry = addKeyCodeArry(keyCode, keyCodeArry);
+        });
+        jpeditor.addEventListener("keyup", function (ev) {
+            var oEvent = ev || event;
+            let keyCode = oEvent.keyCode;
+            keyeventhandle();
+            keyCodeArry = deletKeyCodeArry(keyCode, keyCodeArry);
+        });
+
     }())
 
-    /*(function () {
-        let editor = new Editor();
-        updateHtml();
-        $(document).keypress(function (e) {
-            var c = String.fromCharCode(e.which);
-            (window as any).editor.type(c);
-            updateHtml();
-        });
-        $(document).keydown(function (e) {
-            if (e.which == 8 && (window as any).editor.deleteChar()) {
-                updateHtml();
-            }
-            ;
-            if (e.which == 37 && (window as any).editor.moveLeft()) {
-                updateHtml();
-            }
-            ;
-            if (e.which == 39 && (window as any).editor.moveRight()) {
-                updateHtml();
-            }
-            ;
-        });
-    }());
-*/
 
 </script>
 <script type="text/javascript">
-let jpeditor=document.getElementById("editor");
 
-//组合键监控键盘事件
-let keyCodeArry = [];
-jpeditor.onkeydown = function (ev) {
-    var oEvent = ev || event;
-    keyCode = oEvent.keyCode;
-    keyCodeArry = addKeyCodeArry(keyCode, keyCodeArry);
+    //组合键监控键盘事件
+    let keyCodeArry = [];
 
-}
-jpeditor.onkeyup = function (ev) {
-    var oEvent = ev || event;
-    keyCode = oEvent.keyCode;
-    keyeventhandle();
-    keyCodeArry = deletKeyCodeArry(keyCode, keyCodeArry);
+    function keyD(ev) {
+        var oEvent = ev || event;
+        keyCode = oEvent.keyCode;
+        keyCodeArry = addKeyCodeArry(keyCode, keyCodeArry);
 
-}
-
-function addKeyCodeArry(num, arr) {
-    var check = 0;
-    for (var i = 0; i < arr.length; i++) {
-        if (arr[i] == num) {
-            check = 1;
-        }
     }
-    if (check == 0) {
-        arr.push(num);
+
+    function KeyUp(ev) {
+        var oEvent = ev || event;
+        keyCode = oEvent.keyCode;
+        keyeventhandle();
+        keyCodeArry = deletKeyCodeArry(keyCode, keyCodeArry);
+
     }
-    return arr;
-}
 
-function deletKeyCodeArry(num, arr) {
-    for (var i = 0; i < arr.length; i++) {
-        if (arr[i] == num) {
-            arr.splice(i, 1);
-        }
-    }
-    return arr;
-}
 
-function keyeventhandle() {
-    console.log("press a key");
-    switch (keyCodeArry[0]) {  // 获取当前按下键盘键的编码
-        case 37 :  // 按下左箭头键，向左移动
-
-            break;
-        case 39 :  // 按下右箭头键，向右移动一个
-
-            break;
-        case 38 :  // 按下上箭头键，向上移动5个像素
-
-            break;
-        case 40 :  // 按下下箭头键，向下移动5个像素
-
-            break;
-        case 72://按下了H键，后判断数字键
-            if (keyCodeArry[1]) {
-
+    function addKeyCodeArry(num, arr) {
+        var check = 0;
+        for (var i = 0; i < arr.length; i++) {
+            if (arr[i] == num) {
+                check = 1;
             }
-            break;
-
-        case 76://按下了l键,然后数字键
-
-            break;
-
-        case 48:
-        case 49:
-        case 50:
-        case 51:
-        case 52:
-        case 53:
-        case 54:
-        case 55:
-        case 56:
-        case 57:
-        case 96:
-        case 97:
-        case 98:
-        case 99:
-        case 100:
-        case 101:
-        case 102:
-        case 103:
-        case 104:
-        case 105://直接数字键
-
-            break;
-        case 16://左边Shift键
-
-            break;
-        case 13://回车键
-
-            break;
-
-        default:
-
-            //console.log(keyencode[e.keyCode]);
-            //console.log(row, col);
-
-
-            // jpsvg.appendChild(txt);
-            break;
+        }
+        if (check == 0) {
+            arr.push(num);
+        }
+        return arr;
     }
 
+    function deletKeyCodeArry(num, arr) {
+        for (var i = 0; i < arr.length; i++) {
+            if (arr[i] == num) {
+                arr.splice(i, 1);
+            }
+        }
+        return arr;
+    }
 
-}
+    function keyeventhandle() {
+        console.log("press a key");
+        switch (keyCodeArry[0]) {  // 获取当前按下键盘键的编码
+            case 37 :  // 按下左箭头键，向左移动
+
+                break;
+            case 39 :  // 按下右箭头键，向右移动一个
+
+                break;
+            case 38 :  // 按下上箭头键，向上移动5个像素
+
+                break;
+            case 40 :  // 按下下箭头键，向下移动5个像素
+
+                break;
+            case 72://按下了H键，后判断数字键
+                if (keyCodeArry[1]) {
+
+                }
+                break;
+
+            case 76://按下了l键,然后数字键
+
+                break;
+
+            case 48:
+            case 49:
+            case 50:
+            case 51:
+            case 52:
+            case 53:
+            case 54:
+            case 55:
+            case 56:
+            case 57:
+            case 96:
+            case 97:
+            case 98:
+            case 99:
+            case 100:
+            case 101:
+            case 102:
+            case 103:
+            case 104:
+            case 105://直接数字键
+                var c = keyencode[keyCodeArry[0]];
+                Editor.type(c);
+                updateHtml();
+                break;
+            case 16://左边Shift键
+
+                break;
+            case 13://回车键
+
+                break;
+
+            default:
+
+                //console.log(keyencode[e.keyCode]);
+                //console.log(row, col);
+
+
+                // jpsvg.appendChild(txt);
+                break;
+        }
+
+
+    }
+</script>
+<script type="text/javascript">
+    var oUl = document.getElementById("t"); //获取ul节点
+    deleteSpace(oUl);
+
+
+    //传入父节点，删除它子节点中的空白文本节点
+    function deleteSpace(node) {
+        var childs = node.childNodes;
+        for (var i = 0; i < childs.length; i++) {
+            if (childs[i].nodeType === 3 && /^\s+$/.test(childs
+
+
+                [i].nodeValue)) {
+                node.removeChild(childs[i]);
+            }
+        }
+        return node;
+    }
+
 </script>
 </html>
