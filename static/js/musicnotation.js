@@ -23,8 +23,6 @@ let syllablenames = function (syllableType, syllableName, syllableDuration) {
     this.syllableType = syllableType;
     this.syllableName = syllableName;
     this.syllableDuration = syllableDuration;
-
-
 }
 
 

@@ -5,11 +5,14 @@ html {
     margin-left: 10%;
     margin-right: 10%;
 }
-.Link_tone,tone,Lyric{
+.Link_tone,.tone,.Lyric{
     margin: 0px auto;
-    height: 24px;
+    height: 40px;
 }
-
+.Link_tone_t,.tone_t,.Lyric_t{
+    margin: 0px auto;
+    height: 40px;
+}
 #editor {
     height: 200px;
    /* background-color: #44443e;*/

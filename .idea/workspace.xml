@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="d117ac1a-dad8-4a67-93cb-1d94318bb04a" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/start/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/start/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/start/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/users/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/users/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/users/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/users/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/users/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/users/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/users/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/users/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/users/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/wx.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/canvasgame.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/mobileBase.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/mobile_index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/pc/pc.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nmn/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/nmn/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nmn/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/nmn/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/musicnotation.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/musicnotation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/test.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/test.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+        <option value="JavaScript File" />
+        <option value="Python Script" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1dt1etXYRW41GCJlo9Wf3iztyvJ" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/static/css" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\nmn\templates\pc" />
+      <recent name="D:\nmn\apps" />
+      <recent name="D:\nmn\static\css" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\nmn\static\css" />
+      <recent name="D:\nmn\templates" />
+      <recent name="D:\nmn\apps\start" />
+      <recent name="D:\nmn\apps\users" />
+      <recent name="D:\nmn\static\js" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Django Server.nmn">
+    <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/nmn/templates/index.html">
+      <method v="2" />
+    </configuration>
+    <configuration name="nmn" type="Python.DjangoServer" factoryName="Django server">
+      <module name="nmn" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="DJANGO_SETTINGS_MODULE" value="nmn.settings" />
+      </envs>
+      <option name="SDK_HOME" value="D:\myenv\nmn\Scripts\python.exe" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8888" />
+      <option name="host" value="" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Django Server.nmn" />
+      <item itemvalue="JavaScript Debug.index.html" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JavaScript Debug.index.html" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration>C:\Users\Administrator\AppData\Roaming\Subversion</configuration>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d117ac1a-dad8-4a67-93cb-1d94318bb04a" name="Default" comment="" />
+      <created>1585227413433</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1585227413433</updated>
+      <workItem from="1593229678752" duration="25000" />
+      <workItem from="1594180556438" duration="2924000" />
+      <workItem from="1594300767211" duration="48000" />
+      <workItem from="1594363795619" duration="823000" />
+      <workItem from="1594612937117" duration="18000" />
+      <workItem from="1594614790436" duration="6572000" />
+    </task>
+    <task id="LOCAL-00001" summary="svg use.ai设计">
+      <created>1588691253273</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1588691253273</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="svg use.ai设计" />
+    <option name="LAST_COMMIT_MESSAGE" value="svg use.ai设计" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1594621216758">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1594621216758" />
+    <state width="1877" height="314" key="GridCell.Tab.0.bottom" timestamp="1594624426550">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="314" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1594624426550" />
+    <state width="1877" height="314" key="GridCell.Tab.0.center" timestamp="1594624426550">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="314" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1594624426550" />
+    <state width="1877" height="314" key="GridCell.Tab.0.left" timestamp="1594624426550">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="314" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1594624426550" />
+    <state width="1877" height="314" key="GridCell.Tab.0.right" timestamp="1594624426550">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="314" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1594624426550" />
+    <state width="1877" height="314" key="GridCell.Tab.1.bottom" timestamp="1594624426408">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="314" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1594624426408" />
+    <state width="1877" height="314" key="GridCell.Tab.1.center" timestamp="1594624426408">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="314" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1594624426408" />
+    <state width="1877" height="314" key="GridCell.Tab.1.left" timestamp="1594624426408">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="314" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1594624426408" />
+    <state width="1877" height="314" key="GridCell.Tab.1.right" timestamp="1594624426408">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="314" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1594624426408" />
+    <state x="761" y="142" key="SettingsEditor" timestamp="1594615534022">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="761" y="142" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1594615534022" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1594623125292">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1594623125292" />
+  </component>
+</project>

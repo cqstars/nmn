@@ -1,0 +1,346 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body, html {
+    height: 100%;
+    min-height: 100%;
+    width: 100vw;
+    height: 100vh;
+    font: normal 100% Helvetica, Arial, sans-serif;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto;
+
+}
+
+body a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+body {
+
+}
+
+h1 {
+    font-size: 1.5em;
+}
+
+h2 {
+    font-size: 1em;
+}
+
+header {
+    grid-row: 1/2;
+    grid-column: 1/2;
+    display: flex;
+    display: -webkit-flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+header div:nth-child(1) {
+    flex: 0.3;
+    text-align: center;
+}
+
+header div:nth-child(2) {
+    flex: 0.7;
+}
+
+header div:nth-child(2) > h2 {
+    text-align: center;
+}
+
+header div:nth-child(2) > p {
+    font-size: 0.8em;
+}
+
+section {
+    grid-row: 2/3;
+    grid-column: 1/2;
+    overflow: auto;
+    padding: 10px;
+    box-sizing: content-box;
+    display: flex;
+    display: -webkit-flex;
+    flex-direction:column;
+    justify-content: flex-start;
+    align-items:flex-start;
+}
+section>.list{
+width: 100%;border: 1px solid rgba(0,0,0,0.3);box-shadow: 1px 1px 3px rgba(0,0,0,0.5);border-radius: 5px;padding: 10px;box-sizing:border-box;margin-bottom: 5px;
+}
+.wrapper_f{
+    width: 100%;
+    margin-bottom: 10px;
+    display:flex;
+    display: -webkit-flex;
+    justify-content:space-around;
+    align-items: center;
+
+}
+#result{
+    width: 100%;
+}
+.list_table {
+    border: 1px solid #ddd;
+    border-collapse: collapse;
+    width: 100%;
+    text-align: center;
+}
+
+.list_table  thead tr th,
+.list_table tbody tr td {
+    text-align: center;
+    color: #333;
+    border: 1px solid #ddd;
+    border-collapse: collapse;
+    background-color: #fff;
+}
+
+footer {
+    grid-row: 3/4;
+    grid-column: 1/2;
+    background-color: #c9c9c9;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    box-shadow:0px -2px 1px rgba(0,0,0,0.1);
+    background:#f1f1f1;
+}
+
+footer .tab {
+    padding: 6px;
+    box-sizing:border-box;
+    font-size: 0.8em;
+    text-align: center;
+
+}
+
+.breadcrumb {
+    font-size: 0.8em;
+}
+
+#result {
+    font-size: 0.8em;
+    color: #ff0000;
+}
+
+/*----------------------------牌计分样式----------------------------------------------------------*/
+.set_game {
+    font-size: 1em;
+}
+
+.set_game div {
+    margin-bottom: 5px;
+    padding: 5px;
+}
+
+.set_game div input {
+    margin-left: 3px;
+    border: 1px solid #a1a1a1;
+    border-radius: 2px;
+    padding: 5px 2px;
+}
+
+.card_content {
+    display: -webkit-flex; /* Safari */
+    display: flex;
+    font-size: 0.8em;
+    flex-wrap: wrap;
+    padding: 5px;
+}
+
+.card_content .item {
+    font-size: 0.8em;
+    margin: 10px;
+    padding: 5px;
+    border: 1px solid #666666;
+    border-radius: 2px;
+    text-align: center;
+    cursor: pointer;
+}
+
+/*----------------------------牌计分样式----------------------------------------------------------*/
+.content_flex {
+    display: -webkit-flex; /* Safari */
+    display: flex;
+    font-size: 0.8em;
+    flex-wrap: wrap;
+    padding: 5px;
+}
+
+.content_flex div {
+    margin-bottom: 10px;
+}
+
+.content_flex input:not([type=submit]) {
+    margin-left: 3px;
+    border: 1px solid #a1a1a1;
+    border-radius: 2px;
+    padding: 5px 2px;
+}
+
+.content_flex_fwp {
+    display: -webkit-flex; /* Safari */
+    display: flex;
+    font-size: 0.8em;
+    flex-wrap: wrap;
+    padding: 10px;
+}
+
+.content_flex_fwp input:not([type=submit]) {
+    margin-left: 3px;
+    border: 1px solid #a1a1a1;
+    border-radius: 2px;
+    padding: 5px 2px;
+}
+
+.content_flex_fwp div {
+    margin-bottom: 5px;
+    width: 100%;
+}
+
+/*------------------------------input里面placeholder样式设置*/
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: red;
+    font-size: 0.7em;
+    font-style: italic;
+}
+
+::-moz-placeholder { /* Firefox 19+ */
+    color: red;
+    font-size: 0.7em;
+    font-style: italic;
+}
+
+:-ms-input-placeholder { /* IE 10+ */
+    color: red;
+    font-size: 0.7em;
+    font-style: italic;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+    color: red;
+    font-size: 0.7em;
+    font-style: italic;
+}
+
+/*----------------------------input里面placeholder样式设置*/
+/*---------------submit样式------------------------*/
+.btn2 {
+    display: block;
+    width: 80px;
+    /*border-style: solid;*/
+    padding: 3px 8px 4px;
+    margin: 5px;
+    /*line-height: 24px;*/
+    color: #343434;
+    font: 1em "Microsoft YaHei", Verdana, Geneva, sans-serif;
+    cursor: pointer;
+    border: 1px #ae7d0a solid;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.btn {
+
+    border-style: none;
+    margin: 5px;
+    padding: 5px 15px;
+    line-height: 24px;
+    color: #ffffff;
+    font: 1em "Microsoft YaHei", Verdana, Geneva, sans-serif;
+    cursor: pointer;
+    border: 1px #ae7d0a solid;
+    -webkit-box-shadow: inset 0px 0px 1px #fff;
+    -moz-box-shadow: inset 0px 0px 1px #fff;
+    box-shadow: inset 0px 0px 1px #fff; /*内发光效果*/
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px; /*边框圆角*/
+    text-shadow: 1px 1px 0px #b67f01; /*字体阴影效果*/
+    background-color: #feb100;
+    background-image: -webkit-gradient(linear, 0 0%, 0 100%, from(#feb100), to(#e8a201));
+    background-image: -webkit-linear-gradient(top, #feb100 0%, #e8a201 100%);
+    background-image: -moz-linear-gradient(top, #feb100 0%, #e8a201 100%);
+    background-image: -ms-linear-gradient(top, #feb100 0%, #e8a201 100%);
+    background-image: -o-linear-gradient(top, #feb100 0%, #e8a201 100%);
+    background-image: linear-gradient(top, #feb100 0%, #e8a201 100%); /*颜色渐变效果*/
+}
+
+.btn:hover {
+
+    background-color: #e8a201;
+    background-image: -webkit-gradient(linear, 0 0%, 0 100%, from(#e8a201), to(#feb100));
+    background-image: -webkit-linear-gradient(top, #e8a201 0%, #feb100 100%);
+    background-image: -moz-linear-gradient(top, #e8a201 0%, #feb100 100%);
+    background-image: -ms-linear-gradient(top, #e8a201 0%, #feb100 100%);
+    background-image: -o-linear-gradient(top, #e8a201 0%, #feb100 100%);
+    background-image: linear-gradient(top, #e8a201 0%, #feb100 100%);
+}
+
+.login_box {
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #f1f1f1;
+}
+
+.item {
+    font-size: 0.8em;
+    margin: 10px;
+    padding: 5px;
+    border: 1px solid #666666;
+    border-radius: 2px;
+    text-align: center;
+}
+
+.form_item {
+    font-size: 0.8em;
+    margin: 10px;
+    padding: 5px;
+    border: 1px solid #f1f1f1;
+    border-radius: 2px;
+    text-align: center;
+}
+
+.goodslists {
+    display: flex;
+    padding: 5px;
+}
+
+.Neonstereo {
+    background: #212121;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 1px 2px 2px rgba(0, 0, 0, .5);
+}
+
+.Neonstereo h2 {
+    font-size: 25px;
+    color: #ffffff;
+    text-shadow: 1px 1px 2px red, -1px 1px 2px red, 1px -1px 2px red, -1px -1px 2px red;
+}
+
+.shadow3 {
+    text-shadow: 1px 1px 1px #666,
+    3px 3px 8px black;
+    color: #ffffff;
+}
+
+.icon {
+    width: 1.5em;
+    height: 1.5em;
+    vertical-align: -0.15em;
+    fill: currentColor;
+    overflow: hidden;
+}
+
+.errorlist, .error {
+    font-size: 0.8em;
+    font-style: italic;
+    color: #db192a;
+}

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>canvas</title>
+</head>
+<body>
+<canvas width="600px" height="400px"></canvas>
+</body>
+<script type="text/javascript">
+    let mycanvas = document.querySelector("canvas");
+    let ctx = mycanvas.getContext("2d");
+    let x = 100;
+    setInterval(function () {
+        x++;
+        ctx.clearRect(0,0,600,400);
+        ctx.beginPath();
+        ctx.arc(x, 100, 50, 0, Math.PI * 2, true);
+        ctx.closePath();
+        ctx.fillStyle = "#566565";
+        ctx.fill();
+    }, 20)
+
+
+    ctx.fill();
+</script>
+</html>
